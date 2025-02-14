@@ -1,0 +1,21 @@
+#corpo h1{
+    color: black;
+    text-align: center;
+    margin-top: 7vh;
+}
+
+#img1{
+    scale: 1.2;
+}
+
+img{
+    scale: 1.2;
+}
+
+#imgs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vh;
+    gap: 10vw;
+}

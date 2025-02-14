@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aguaga</title>
+</head>
+<body>
+
+    <div id="navbar">
+        <h1 id="titulo">AGUAGA</h1>
+        <div id="links">
+          <div class="dropdown">
+            <h3 class="dropdown-toggle link">PROJETOS</h3>
+            <div class="dropdown-menu">
+              <a href="/publicos">Público</a>
+              <a href="/privados">Privado</a>
+            </div>
+          </div>
+          <a href="/contatos"><h3 class="link">CONTATOS</h3></a>
+          <div class="dropdown">
+            <h3 class="dropdown-toggle link">DICAS</h3>
+            <div class="dropdown-menu">
+              <a href="/saneamento">SANEAMENTO</a>
+              <a href="/economizar">ECONOMIZAR</a>
+            </div>
+          </div>
+          <a href="/estatisticas"><h3 class="link">ESTATÍSTICAS</h3></a>
+        </div>
+        <a href="/"><h1 id="home">HOME</h1></a>
+      </div>
+    
+      <style>
+        *{
+    margin: 0px;
+    padding: 0px;
+    color: white;
+    text-decoration: none;
+}
+
+#navbar{
+    height: 10vh;
+    padding: 10px 20px;
+    background-color: #0097b2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#titulo{
+    font-family: the-seasons;
+    font-style: normal;
+    font-size: 6vh;
+    margin-left: 4vw;
+}
+
+#links{
+    display: flex;
+}
+
+.link{
+    width: 8vw;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    font-size: 1vw;
+}
+
+.link:hover{
+    background-color: white;
+    color: #0097b2;
+}
+
+#home{
+    font-size: 5vh; 
+    border: 5px solid white;
+    padding: 1vw;
+    text-align: center;
+    margin-right: 4vw;
+}
+
+#titulo, #home {
+    font-size: 24px;
+  }
+  
+  #links {
+    display: flex;
+  }
+  
+  #links h3 {
+    margin: 0;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  /* Dropdown */
+  .dropdown {
+    position: relative;
+  }
+  
+  .dropdown-menu {
+    display: none; /* Oculto por padrão */
+    position: absolute;
+    top: 100%;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 8vw;
+    font-size: 1vw;
+    text-align: center;
+    z-index: 1000;
+    border-radius: 4px;
+  }
+  
+  .dropdown-menu a {
+    display: block;
+    padding: 10px;
+    color: #0097b2;
+    text-decoration: none;
+  }
+  
+  .dropdown-menu a:last-child {
+    border-bottom: none;
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: rgb(218, 218, 218);
+  }
+  
+  /* Exibição do Dropdown ao passar o mouse */
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+      </style>
+
+    <script>
+    // Torna o menu funcional também em dispositivos móveis ou quando clicado
+    document.addEventListener("DOMContentLoaded", () => {
+      const dropdownToggle = document.querySelector(".dropdown-toggle");
+      const dropdownMenu = document.querySelector(".dropdown-menu");
+  
+      // Alterna a exibição do menu ao clicar
+      dropdownToggle.addEventListener("click", () => {
+        const isVisible = dropdownMenu.style.display === "block";
+        dropdownMenu.style.display = isVisible ? "none" : "block";
+      });
+  
+      // Oculta o menu quando clicar fora dele
+      document.addEventListener("click", (event) => {
+        if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+          dropdownMenu.style.display = "none";
+        }
+      });
+    });
+  
+    </script>
